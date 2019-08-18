@@ -1,0 +1,7 @@
+1. Git bash here - where .git file is located
+2. $ git add .
+3. $git commit -m "yourmessage"
+4.$git push -u origin master
+
+git config –global user.name “[name]”
+git config –global user.email “[email address]” 

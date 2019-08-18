@@ -1,0 +1,59 @@
+.btn-primary {
+	display: inline-block;
+	padding: 10px 20px;
+	border-radius: 10px;
+	background-color: #7E69AC;
+	font-family: FuturaBold;
+	font-size: 20px;
+	text-decoration: none;
+	box-shadow: 2px 5px 5px #332259;
+	cursor: pointer;
+	transition: opacity 0.5s ease-in-out;
+	opacity: 1;
+	&:hover {
+		opacity: 0.6;
+	}
+}
+
+.btn-main {
+	display: inline-block;
+	padding: 10px 20px;
+	border:1px solid #476F93;
+	border-radius: 10px;
+	background-color: #3895BE;
+	background-image: linear-gradient(#58C3EF, #3895BE);
+	font-family: FuturaBold;
+	font-size: 20px;
+	color: #FFFFFF;
+	text-decoration: none;
+	box-shadow: 2px 5px 5px #3F3155;
+	transition: opacity 0.5s ease-in-out;
+	cursor: pointer;
+	opacity: 1;
+	&:hover {
+		opacity: 0.8;
+	}
+	&.btn-small {
+		padding: 5px 15px;
+		font-size: 15px;
+	}
+}
+
+.btn-secondary {
+	display: inline-block;
+	padding: 8px 15px;
+	border:2px solid #FFF;
+	border-radius: 10px;
+	background-color: #4367B3;
+	font-family: FuturaBold;
+	font-size: 16px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: opacity 0.5s ease-in-out;
+	opacity: 1;
+	&:hover {
+		opacity: 0.6;
+	}
+}
+
+

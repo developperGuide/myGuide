@@ -1,0 +1,15 @@
+mixin banner(options)
+
+  - imgDesktop = options.imgDesktop || "Resources/images/default/milka-oreo-main-banner.png";
+  - imgMobile = options.imgMobile || "Resources/images/default/milka-oreo-main-banner-mobile.png";
+  - imgAlt = options.imgAlt || "Zusammen unschlager Milka and Oreo";
+  - imgWidth = options.imgWidth || "1190";
+  - imgHeight = options.imgHeight || "618";
+
+  section.banner
+    picture
+      source(media="(max-width: 768px)", srcset=imgMobile)
+      img(src=imgDesktop ,width=imgWidth, height=imgHeight, alt=imgAlt)
+
+  //- section.banner
+    img(src="Resources/images/default/milka-oreo-main-banner.png",width="1190",height="618",alt="Zusammen unschlager Milka and Oreo")

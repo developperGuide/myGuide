@@ -1,0 +1,11 @@
+footer
+	p This is the Footer Section
+
+block scripts
+	script
+		include ../../js/critical/default.min.js
+	script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+	script(async='', src='Resources/js/main.min.js')
+	if hasScript == true
+		//if bodyClass != 'terms-of-use' || bodyClass != 'faq'
+			script(async='', src='Resources/js/fb-share.min.js')

@@ -1,0 +1,47 @@
+.form-input {
+	width: 100%;
+	border:1px solid #E6E7E9;
+	padding:12px 15px;
+	font-family: $font-family-regular-medium;
+	color: #1A1A18;
+	position: relative;
+}
+
+.error {
+	display:none;
+	padding: 10px 15px;
+	background: $white;
+	color: #FF0000;
+	font-family: $font-family-pluto-regular;
+}
+
+.not-valid {
+	border:1px solid #F0BBBD;
+	background: #F0BBBD;
+}
+
+.error-input {
+	&:after {
+		content: 'X';
+		width: 25px;
+		height: 25px;
+		position: relative;
+		float: right;
+		margin-top: -40px;
+		z-index: 999;
+		font-size: 16px;
+		font-weight: bold;
+		color: #CD1F23;
+	}
+}
+
+.success {
+	display: none;
+	width: 13px;
+	height: 10px;
+	background:url(../images/tick.png) repeat;
+	position: relative;
+	float: right;
+	margin: -25px 12px 0 0;
+}
+

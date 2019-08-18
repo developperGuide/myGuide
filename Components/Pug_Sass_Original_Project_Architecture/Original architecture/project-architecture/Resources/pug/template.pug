@@ -1,0 +1,17 @@
+extends layout/layout.pug
+
+append styles
+	//- additional style sheets here
+
+block vars
+	- var bodyClass = 'template';
+	- var pageTitle = 'Test';
+	- var hasScript = true;
+
+block content
+	section.container
+		h1 Template Page
+		p Hello PUG
+
+append scripts
+	//- additional scripts here

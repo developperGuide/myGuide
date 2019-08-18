@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Web Starter Kit">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="theme-color" content="#513c79">
+    <title>Test</title>
+    <style type="text/css">
+      <!--include ../../css/critical/default.min.css-->
+    </style>
+    <noscript id="deferred-styles">
+      <link href="Resources/css/template.min.css?v=1.0" rel="stylesheet" media="all">
+    </noscript>
+  </head>
+  <body class="template">
+    <header>
+      <p>This is the Header section</p>
+    </header>
+    <main class="wrapper page-border" id="main">
+      <section class="container">
+        <h1>Template Page</h1>
+        <p>Hello PUG</p>
+      </section>
+    </main>
+    <footer>
+      <p>This is the Footer Section</p>
+    </footer>
+    <script>"use strict";function imageLoad(){for(var e=document.getElementsByTagName("img"),t=0;t<e.length;t++)e[t].getAttribute("data-src")&&e[t].setAttribute("src",e[t].getAttribute("data-src"))}var loadDeferredStyles=function(){var e=document.getElementById("deferred-styles"),t=document.createElement("div");t.innerHTML=e.textContent,document.body.appendChild(t),e.parentElement.removeChild(e)},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(function(){window.setTimeout(loadDeferredStyles,0)}):window.addEventListener("load",loadDeferredStyles),window.onload=imageLoad;</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script async="" src="Resources/js/main.min.js"></script>
+    <!--if bodyClass != 'terms-of-use' || bodyClass != 'faq'script(async='', src='Resources/js/fb-share.min.js')
+    -->
+  </body>
+</html>

@@ -1,0 +1,21 @@
+@font-face {
+	font-family: 'FuturaMedium';
+	src:	url('../fonts/futura-medium/futura-medium.eot');
+	src:	url('../fonts/futura-medium/futura-medium.eot') format('embedded-opentype'),
+				url('../fonts/futura-medium/futura-medium.woff') format('woff'),
+				url('../fonts/futura-medium/futura-medium.ttf') format('truetype'),
+				url('../fonts/futura-medium/futura-medium.svg#futura-medium') format('svg');
+}
+
+@font-face {
+	font-family: 'FuturaLight';
+	src:	url('../fonts/futura-light/futura-light.eot');
+	src:	url('../fonts/futura-light/futura-light.eot') format('embedded-opentype'),
+				url('../fonts/futura-light/futura-light.woff') format('woff'),
+				url('../fonts/futura-light/futura-light.ttf') format('truetype'),
+				url('../fonts/futura-light/futura-light.svg#futura-light') format('svg');
+}
+
+$font-family-regular-medium: FuturaMedium, Arial, sans-serif;
+$font-family-regular-light: FuturaLight, Arial, sans-serif;
+

@@ -1,0 +1,16 @@
+include ../includes/mixins
+
+doctype html
+html(lang='de')
+	block vars
+		- var bodyClass = 'body class';
+		- var pageTitle = 'page title';
+		- var cloudPath = 'http://res.cloudinary.com/pbio/image/upload/v1507628474/Milka/';
+		- var hasScript = true;
+	include ../includes/head.pug
+	body(class=bodyClass)
+		include ../includes/header.pug
+		main#main.wrapper.page-border
+			block content
+				section
+		include ../includes/footer.pug

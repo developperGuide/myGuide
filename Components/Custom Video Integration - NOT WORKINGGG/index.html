@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom Made Video  Integration </title>
+	<style type="text/css">
+		body.video .video-cover{
+   			background: red;
+		}
+		body.video .video-container {
+		    display: -webkit-box;
+		    display: -ms-flexbox;
+		    display: flex;
+		    -webkit-box-align: center;
+		    -ms-flex-align: center;
+		    align-items: center;
+		    -webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		    justify-content: center;
+		    height: 450px;
+		    background: #025B95;
+}
+
+
+
+body.video .video-wrapper {
+    padding: 0
+}
+
+
+@media only screen and (min-width:1200px) {
+    body.video .video-wrapper {
+        padding: 100px
+    }
+    body.video .video-container {
+        width: 800px;
+        margin: 50px auto 0 auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center
+    }
+
+}
+
+
+body.video .play-button {
+    background: url(https://freepngimg.com/thumb/play_button/25893-7-play-button-image.png) no-repeat;
+    cursor: pointer;
+    border: none;
+    width: 125px;
+    height: 125px
+}
+
+
+body.video .hidecontent {
+    display: none
+}
+
+#video{
+    height: 450px;
+    width: 800px;
+}
+
+
+
+
+
+	</style>
+</head>
+<body class="video">
+
+	<div class="video-wrapper">
+	    <div class="video-container video-wrapper text-center video-cover">
+	        <div class="video-preview-banner" id="js-view-video-preview">
+	            <button class="play-button" type="button" id="js-preview-video"></button>
+	        </div>
+	        <div class="video-banner hidecontent" id="js-view-video-frame">
+	            <iframe width="560" height="400" src="https://www.youtube-nocookie.com/embed/U4W1n1yapas?rel=0&amp;enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" id="video"></iframe>
+	        </div>
+	    </div>
+	</div>
+
+
+
+<script type="text/javascript">
+	
+//Youtube API
+//The player object
+var player;
+
+//Important function for Youtube api callback
+function onYouTubePlayerAPIReady() {
+	// create the global player from the specific iframe (#video)
+	player = new YT.Player('video',{
+		events: {
+			// call this function when player is ready to use
+			'onReady': onPlayerReady
+		}
+	});
+}
+
+function onPlayerReady(event){
+
+	//Handler for preview button
+	$('#js-preview-video').on('click',function(){
+		player.playVideo();	
+		$('#js-view-video-preview').hide();
+		$('.video-container').removeClass('video-cover');
+		$('#js-view-video-frame').fadeIn('fast');
+	});
+	
+}
+
+/* Call the youtube api */
+var tag = document.createElement('script');
+tag.src = "//www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);	
+
+//End Youtube API
+</script>
+</body>
+</html>

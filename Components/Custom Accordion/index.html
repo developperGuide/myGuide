@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accordion</title>
+	<style type="text/css">	
+ 	.panel {  text-align: center;  margin-bottom: 20px; border:1px solid;}
+	.accordion-text { padding: 25px 20px 40px; font-size: 20px; }
+	.wrapper {	min-height: calc(100vh - 380px);padding: 20px 0;}
+
+	/*Desktop 1200px */
+	@media only screen and (min-width: 1200px){
+	  .wrapper {
+	    	width: 1280px;
+	    	margin: 0 auto;
+	   	 	margin-top: 50px;
+	   }
+	  .panel {
+	   	 	position: relative;
+	     	padding: 0 120px 50px;
+	     	margin: 0;
+	    }
+	  .accordion-text {
+		 	padding-bottom: 0;
+	   }
+	  .accordion-icon {
+	    	position: absolute;
+	    	top: 0;
+	    	right: 50px; 
+		}
+	}
+	</style>
+</head>
+<body class="accordion">
+	<h1 align="center">Accordion Template</h1>
+	<div class="wrapper">
+	
+		<div class="panel">
+			<h3 class="heading">Heading goes here !</h3>
+			<div class="accordion-text">
+				Paragrah goes here
+			</div>
+			<div class="accordion-icon">
+				<a class="plus-icon">
+					<img src="https://freeiconshop.com/wp-content/uploads/edd/plus-flat.png" height="50px" width="50px"/>
+				</a>
+				<a class="cross-icon">
+					<img src="https://freeiconshop.com/wp-content/uploads/edd/cross-flat.png" height="50px" width="50px"/>
+				</a>
+			</div>
+		</div>
+		<div class="panel">
+			<h3 class="heading">Heading goes here !</h3>
+			<div class="accordion-text">
+				Paragrah goes here
+			</div>
+			<div class="accordion-icon">
+				<a class="plus-icon">
+					<img src="https://freeiconshop.com/wp-content/uploads/edd/plus-flat.png" height="50px" width="50px"/>
+				</a>
+				<a class="cross-icon">
+					<img src="https://freeiconshop.com/wp-content/uploads/edd/cross-flat.png" height="50px" width="50px"/>
+				</a>
+			</div>
+		</div>
+
+	</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	    $(".cross-icon").hide(), $(".accordion-text").hide(), $(".plus-icon").click(function() {
+	        $(this).siblings(".cross-icon").show(), $(this).hide();
+	        var i = $(this).closest(".panel");
+	        $(this).closest(".wrapper").find(".panel").not(i).find(".accordion-text").slideUp(), $(this).closest(".wrapper").find(".panel").not(i).find(".plus-icon").show(), $(this).closest(".wrapper").find(".panel").not(i).find(".cross-icon").hide(), $(this).closest(".panel").find(".accordion-text").slideDown()
+	    }), $(".cross-icon").click(function() {
+	        $(this).siblings(".plus-icon").show(), $(this).hide(), $(this).closest(".panel").find(".accordion-text").slideUp()
+	    })
+	});
+</script>
+</body>
+</html>

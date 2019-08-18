@@ -1,0 +1,49 @@
+<style type="text/css">
+body{
+	background: wheat;
+}
+.trapezoid{
+	margin: 0 auto;
+	position: relative;
+	height: 70px;
+	width:120px;
+	/*border: 1px solid green;*/
+	perspective: 500px;
+	perspective-origin: 50% 0;
+}
+.trapezoid-content{
+	position: absolute;
+	/*border: 1px solid red;*/
+	box-shadow: 0 0 0 1px transparent;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	transform: rotateX(17deg);  
+	background: #fff;
+}
+
+.trapezoid-content p {
+	text-align: center;
+	color:lightBlue;
+	font-size: 12px;
+}
+
+</style>
+<div class="trapezoid">
+	<div class="trapezoid-content">
+		<p>Cheesy Cones</p>
+	</div>
+</div>
+
+<div class="trapezoid">
+	<div class="trapezoid-content">
+		<p>Strip Cheese</p>
+	</div>
+</div>
+
+<div class="trapezoid">
+	<div class="trapezoid-content">
+		<p> BBQ Jumbo Tubes</p>
+	</div>
+</div>

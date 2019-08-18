@@ -1,0 +1,10 @@
+
+Add the following line of code into your httpd.conf file 
+
+Header set X-XSS-Protection "1; mode=block"
+
+CSP - Content -Security -Policy
+Header set Content-Security-Policy "default-src 'self';"
+
+https://content-security-policy.com/
+https://geekflare.com/http-header-implementation/

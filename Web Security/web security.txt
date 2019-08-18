@@ -1,0 +1,27 @@
+1 - HttpOnly flag 
+
+(Activer le flag HttpOnly sur les cookies)
+
+
+
+2 - Secure flag 
+
+(Activer le flag Secure sur les cookies)
+
+
+
+3 - Scripts venant de source tiers
+
+(S'assurer que les scripts présent sur la page proviennent d'une source de confiance et qu'ils ne puissent pas être contrôlés par un utilisateur)
+
+
+
+4 - Cache-control et Pragma HTTP Header
+
+(Configurer les entêtes HTTP Cache-control et Pragma)
+
+
+
+5 - Web Browser XSS Protection
+
+(Activer la protection contre les attaques XSS)

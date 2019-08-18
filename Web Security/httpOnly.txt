@@ -1,0 +1,15 @@
+- Ensure that mod_headers are enabled
+- Under Main Server Configuration section in httpd.conf file
+
+Header set Set-Cookie HttpOnly;Secure  -- lower than 2.2.4
+
+Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure
+Header always edit Set-Cookie (.*) "$1; HTTPOnly; Secure"
+Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure;SameSite=Strict
+-- use 2 directives
+
+Header always edit Set-Cookie (.*) "$1; HTTPOnly"
+Header always edit Set-Cookie (.*) "$1; Secure"
+
+Reference
+https://stackoverflow.com/questions/24129201/add-secure-and-httponly-flags-to-every-set-cookie-response-in-apache-httpd
