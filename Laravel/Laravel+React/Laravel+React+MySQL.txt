@@ -1,0 +1,230 @@
+----------------------------------- Installation process ---------------------------
+-Install Composer
+-Set path to c://xampp/php 
+-Create a new folder in c://xampp/htdocs/
+-Open folder directory in cmd
+- Type the following to install laravel:- composer create-project --prefer-dist laravel/laravel YourProjectName
+- After installation completed, go to your project through cmd and type php artisan serve
+- A page will be loaded in the path given to you
+- To Install React, type:- php artisan preset react 
+- Then type npm install
+- Then type npm run dev
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------Linking of JS and CSS ---------------------------------
+- Go to resources-> views -> open welsome.blade.php
+- Remove everthing in the <body></body> tag
+- Remove the <style></style> tag completly
+- Link external css i.e. ==> /css/app.css and js ==> /js/app.js
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------- Database & Migration ---------------------------------------
+- Open phpmyadmin and create a new database
+- Open .env file and modify as follows:
+	DB_CONNECTION=mysql
+	DB_HOST=127.0.0.1
+	DB_PORT=3306
+	DB_DATABASE=yourDatabaseName
+	DB_USERNAME=root
+	DB_PASSWORD=
+
+- Then, type in cmd php artisan migrate ==> this will create 2 table in phpmyadmin given by laravel thourgh installation 
+- To create a migration file in laravel through cmd type: php artisan make:migration create_nameOFtable
+- The migration file will be automatically created under database/migrations section
+- Open it and create your table in it
+- List of laravel datatype ==> https://www.tkserver.com/laravel-database-column-types/ 
+- After setting the table's fields , type php artisan migrate in your cmd to push it to your database in phpmyadmin
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------- React Component ---------------------------------------
+
+1. Modify your Example.js
+- Open resources\js\components\Example.js
+- Rename Example to Index in it and rename only in the rendering section of react dom  to app i.e. in the document.getElementById
+- Rename the component file to Index as well
+- Modify app.js and change this require('./components/Example'); to this  require('./components/Index');
+- Check welcome.blade.php, if under <div id="app"></div> the id is app
+- In cmd, type npm run dev and wait... 
+
+2.  Creating the header and footer component
+- Create a new folder named common in resources/js/components
+- Create Header.js and Footer.js
+- Paste the following lines in it:
+
+=========
+Header.js
+=========
+import React, { Component } from "react";
+
+export default class Header extends Component {
+    render() {
+        return <div>This is the header section.</div>;
+    }
+}
+
+
+=========
+Footer.js
+=========
+import React, { Component } from "react";
+
+export default class Footer extends Component {
+    render() {
+        return <div>This is the header section.</div>;
+    }
+}
+
+- Import Header and Footer in Index.js
+
+import Header from "./common/Header";
+import Footer from "./common/Footer";
+
+- Use  <Header /> and <Footer /> to place them anywhere inside your <div class="container">.
+
+******** Note: Instead of using npm run dev each time a component is modified or created, use npm run watch *************
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-------------------------------------- React Router  --------------------------------
+// Navigation Linking
+
+1. Install React Router
+
+- Type npm install react-router-dom --save, in your cmd
+- Create some components e.g. About, Contact etc... 
+- Go to Header.js
+
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Home from "../Home";
+import About from "../About";
+import Contact from "../Contact";
+import Category from "../Category";
+
+return (
+            <Router>
+                <div className="page-header">
+                    <nav className="page-menu navbar navbar-expand-lg navbar-light bg-dark">
+                        <Link className="navbar-brand" to="/">
+                            React Laravel Project
+                        </Link>
+
+                        <button
+                            className="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div
+                            className="collapse navbar-collapse"
+                            id="navbarSupportedContent"
+                        >
+                            <ul className="navbar-nav mr-auto">
+                                <li className="nav-item active">
+                                    <Link className="nav-link" to="/">
+                                        Home
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/about">
+                                        About
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/contact">
+                                        Contact
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/category">
+                                        Category
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div className="page-submenu">
+                        <ul>
+                            <li>Sign Up</li>
+                            <li>Sign in</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/contact" component={Contact} />
+                <Route path="/category" component={Category} />
+            </Router>
+        );
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Mode + Controller for RESTFUL API
+
+1. Creating a model for a table
+=> $ php artisan make:model Mode/nameOfYourModel
+=> Model are automatically created under directory app/
+the Mode/ puts it in a foler for you
+=> Go to your model folder and locate it there	
+
+2. Creating a Controller
+
+=> php artisan make:controller myControllers/nameOfYourController --resource
+=> Controllers are located under \app\Http\Controllers 
+
+3. When both controller and model has been sucessfully created, 
+ Open your controller
+ and import the Model from it as follows:
+
+ use App\Category;
+
+In your controller add the following under index function:
+
+ public function index()
+    {
+        //fetch data from database
+        $result = Category::all();
+        return $result;
+    }
+
+Testing::::
+4. From folder route. open web.php file and link controller to view as follows:
+
+//upon /category in browser, call the index in my controller and show 
+Route::get('category/Listing', 'myControllersApi\CategoryController@index');
+
+
+==============================
+Controller can have any name
+Model must be in singular
+Tables must be in plural
+Note: Model User => Users in mySQL
+Model Category=> Categories in  mySQL
+==============================
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Display the data from database in the table in your browser
+
+Listing & ADD
+
+
+
+
+
+

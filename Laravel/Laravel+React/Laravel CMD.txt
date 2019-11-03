@@ -1,0 +1,8 @@
+--------- Common CMD -----------------
+1. php artisan serve -> Launch project
+2. php artisan  create_nameOFtable -> create a new migration file in database/migration directory
+3. npm run dev --> run after each updates
+4. npm run watch --> run continuous updates
+5. php artisan migrate --> push table to db
+6. php artisan make:controller myControllers/nameOfYourController --> create a controller in a folder myControllers
+7. php artisan make:model Mode/nameOfYourModel -->  create a model in a folder Model

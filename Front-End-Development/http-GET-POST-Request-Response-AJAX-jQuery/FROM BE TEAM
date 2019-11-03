@@ -1,0 +1,37 @@
+API
+
+-----
+Get All Orders
+
+GET request to /api/orders
+
+Sample Response:
+[{
+    id:1,
+    name:'James',
+    drink:'coffee'
+},{
+    id:2,
+    name:'John',
+    drink:'latte'
+}]
+
+
+
+-------
+POST request to /api/orders
+TYPE:JSON
+
+Sample posts:
+{
+    name:'James',
+    drink:'Coffee'
+}
+
+
+Sample Response:
+{
+    id:3,
+    name:'Sammy',
+    drink:'Latte'
+}
