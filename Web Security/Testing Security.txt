@@ -1,6 +1,0 @@
-Testing using curl
-
-HTTP 
-
-curl -I -L http://websecurity.com:1234
-curl websecurity.com:1234 -v
