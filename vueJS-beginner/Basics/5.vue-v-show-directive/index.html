@@ -1,0 +1,26 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>Vue JS - Beginner</title>
+    </head>
+    <body>
+        <div id="root">
+            <!-- Hide and Show Element with vue attribute v-show --> 
+            <!-- v-show="true" -->
+            <!-- <h1 v-show="false">{{title}}</h1> -->
+            <h1 v-show="showHideElement">{{title}}</h1>
+        </div>
+        <script>
+            var vueObject = new Vue({
+               el:"#root" ,
+               data:{
+                    title: "Page Title",
+                    showHideElement:true
+               }
+            });
+        </script>
+    </body>
+</html>

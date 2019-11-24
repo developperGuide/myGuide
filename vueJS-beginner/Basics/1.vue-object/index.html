@@ -1,0 +1,27 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>Vue JS - Beginner</title>
+    </head>
+    <body>
+        <!-- Connecting Vue with our DOM -->
+        <div id="root">
+            <p>{{title}}</p>
+        </div>
+        <!-- Vue Object -->
+        <script>
+            new Vue({
+                //property el (element)
+              el:"#root",
+              //property data - to store our data
+              // data will store all your properties and methods
+              data:{
+                  title:"Hello vue"
+              }
+            })
+        </script>
+    </body>
+</html>

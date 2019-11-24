@@ -1,0 +1,53 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>Vue JS - Beginner</title>
+    </head>
+    <body>
+        <!-- ON CHECKBOX return true/false -->
+        <div id="root">
+            <input type="checkbox" v-model="active">
+            <p v-if="active == false">
+                Sorry hidden . ..
+            </p>
+            <p v-else>
+                This is a text . ..
+            </p>
+            <p>{{active}}</p>
+
+
+            <!-- Radio BUttons -->
+            <input type="radio" value="male" v-model="gender">
+            <input type="radio" value="female" v-model="gender">
+            {{gender}}
+
+
+            <!-- Selection -->
+            <select name="" v-model="selectionData">
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+            </select>
+
+            {{selectionData}}
+
+        </div>
+        <script>
+            var vueObj = new Vue({
+              el:"#root",
+              data:{
+                  //default => uncheck
+                  active:false,
+                  //gender
+                  gender:'',
+                  //select
+                  selectionData:''
+              }
+            })
+        </script>
+    </body>
+</html>

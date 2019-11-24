@@ -1,0 +1,63 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>Vue JS - Beginner</title>
+    </head>
+    <body>
+        <div id="root">
+            <input type="text" v-model="newFruitName" v-on:keyup.enter="onAdd"
+                />
+            <button v-on:click="onAdd">Add Fruit(s)</button>
+            <ul>
+                <li v-for="(fruits) in fruitsList">
+                    Fruit name: {{fruits.name | capitalized | availability}}
+                </li>
+            </ul>
+        </div>
+        <script>
+            var vueObj = new Vue({
+              el:"#root",
+              data:{
+                fruitsList:[
+                    {name: "apple" },
+                    {name: "banana" },
+                    {name: "grapes" },
+                    {name: "coconut" }
+                ],
+                newFruitName:''
+              },
+              methods:{
+                  onAdd:function(){
+                      //push new fruit to list
+                      return this.fruitsList.push({name:this.newFruitName})
+                      //clear input box after adding
+                      this.newFruitName = ''
+                  }
+              },
+              filters:{
+                  capitalized:function(value){
+                      return value.toUpperCase();
+                  },
+
+                  availability:function(value){
+                      return value + " (available)"
+                  }
+              },
+              computed:{
+                  // allows you to perform mathematical operations 
+              }
+            })
+
+            // v-on:click="onSubmit.prevent.stop"
+            // v-on:click ====> @click
+            // v-on:keyup.enter ====> @keyup.enter
+
+            //.prevent (preventDefault) // prevent a link to open up in the url
+            // .stop (stopPropagation) //
+
+        </script>
+    </body>
+</html>

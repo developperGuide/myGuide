@@ -1,0 +1,39 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>Vue JS - Beginner</title>
+    </head>
+    <body>
+        <!-- Connecting Vue with our DOM -->
+        <div id="root">
+            <p>{{title}}</p>
+            <p>{{number}}</p>
+            <p>{{value}}</p>
+            <p>{{arrayList[0]}}</p>
+            <p>{{objectArrayList[0]}}</p>
+            <p>{{objectArrayList[0].name}}</p>
+        </div>
+        <!-- Vue Object -->
+        <script>
+            new Vue({
+                //property el (element)
+              el:"#root",
+              //property data - to store our data
+              data:{
+                  title:"Hello vue", //string
+                  number:10, //integer
+                  value:true, //boolean
+                  arrayList:["a","b","c","d"], //array
+                  objectArrayList:[ // array of objects
+                      {name:"John", age:26},
+                      {name:"Patricia", age:30},
+                      {name:"Tom",age:25}
+                  ]
+              }
+            })
+        </script>
+    </body>
+</html>

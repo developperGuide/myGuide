@@ -1,0 +1,46 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>Vue JS - Beginner</title>
+    </head>
+    <body>
+        <div id="appRoot">
+            <h1>{{title}}</h1>
+            <p>{{sayName()}}</p>
+        </div>
+        <script>
+       var personBio =  new Vue({
+            el:"#appRoot",
+            data:{
+                //properties
+                title:"Human Biography ",
+                // personName:["Danisha", 22],
+                personHobby:[
+                    {title: "Basketball" , favoriteLevel: 5},
+                    {title: "Football" , favoriteLevel: 10},
+                    {title: "Dancing" , favoriteLevel: 6}
+                ]
+            },
+            methods:{
+                sayName:function(){
+                    // return "Person Name: " + this.personName[0] +  ", Age: " + this.personName[1] ;
+                    // return this.personHobby[0].title
+                }
+            }
+        })
+
+
+        // In developper console mode
+        // 1. Set your vue object to a variable
+        // 2. Open chrome dev tool
+        // 3. variablename followed by data... example to change title =>  personBio.title = "Test"
+
+        // Note: you can access methods in your console, but it wont change the value
+        // you may use it for debugging purposes
+        
+        </script>
+    </body>
+</html>

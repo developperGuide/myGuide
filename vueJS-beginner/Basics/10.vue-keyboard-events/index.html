@@ -1,0 +1,30 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>Vue JS - Beginner</title>
+    </head>
+    <body>
+        <!-- Type something then press enter, it will display the value u type -->
+        <div id="root">
+            <input v-model="inputValue" @keyup.enter="onSubmit" />
+            <p>{{inputValue}}</p>
+        </div>
+        <script>
+            var vueObj = new Vue({
+              el:"#root",
+              data:{
+                  inputValue:"",
+              },
+              methods:{
+                  onSubmit:function(){
+                    console.log(this.inputValue);
+                    return this.inputValue;
+                  }
+              }
+            })
+        </script>
+    </body>
+</html>

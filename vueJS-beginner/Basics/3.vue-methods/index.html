@@ -1,0 +1,33 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>Vue JS - Beginner</title>
+    </head>
+    <body>
+        <div id="root">
+            <!-- {{personLogin("admin","test")}} -->
+            <!-- {{personLogin()}} -->
+        </div>
+        <script>
+            new Vue({
+              el:"#root",
+              data:{
+                  person:["John", 1234]
+              },
+            //   Methods
+              methods:{
+                personLogin:function(username,password){
+                    //refers to what we insert in the parameters in body
+                    // return "Username:" + username + " & password: " + password;
+
+                    //this - refers to the object Vue
+                    return "Username: " + this.person[0] + " & Password: " + this.person[1]; 
+                }
+              }
+            })
+        </script>
+    </body>
+</html>

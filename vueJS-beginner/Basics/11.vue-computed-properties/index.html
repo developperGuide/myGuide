@@ -1,0 +1,32 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>Vue JS - Beginner</title>
+    </head>
+    <body>
+        <div id="root">
+            <button @click="count++">Increment</button>
+            <button @click="count--">Decrement</button>
+            {{count}}
+        </div>
+        <script>
+            var vueObj = new Vue({
+              el:"#root",
+              data:{
+                  count:0
+              },
+            //   computed:{
+            //       incrementCount:function(){
+            //           return this.count
+            //       },
+            //       decrementCount:function(){
+            //           return this.count
+            //       }
+            //   }
+            })
+        </script>
+    </body>
+</html>

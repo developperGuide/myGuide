@@ -1,0 +1,27 @@
+1. Install vuejs gloabally 
+== > npm install -g @vue/cli
+
+2.Check version of vuejs
+==> vue --version
+
+3. Create an app using command line
+==> vue create PROJECTNAME
+==> npm run serve (will start development server on port 8080)
+
+4. Create an app using user interface (UI)
+==> TYPE vue ui in your cmd
+==> A new tab will be open 
+==> Create your project in the UI itself
+==> Choose package manager as npm
+==> Default preset
+==> Finally you will be redirected to your project dashboard
+==> Go to Tasks -> serve -> run task
+==> Open App
+
+5. Add third-party script => Bootstrap Vue
+==> npm install vue bootstrap-vue bootstrap
+==> import it in main.js file + call Vue.use(BootstrapVue)
+==> import css as well of bootstrap
+
+
+=> 

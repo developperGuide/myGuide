@@ -1,0 +1,31 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>Vue JS - Beginner</title>
+    </head>
+    <body>
+        <div id="root">
+            <!-- if---else -->
+            <!-- <p v-if="active">Hello world</p>
+            <p v-else>Goobye world</p> -->
+            <!-- if---else---elseif -->
+            <p v-if="valueData == 'Sports'">Yayy its Sports</p>
+            <p v-else-if="valueData == 'Badminton'">Yayy its Badminton</p>
+            <p v-else-if="valueData == 'Swimming'">Yayy its Swimming</p>
+            <p v-else>Sorry Empty :( :( :(</p>
+
+        </div>
+        <script>
+            var vueObj = new Vue({
+              el:"#root",
+              data:{
+                  active:true,
+                  valueData:'Badminton'
+              }
+            })
+        </script>
+    </body>
+</html>

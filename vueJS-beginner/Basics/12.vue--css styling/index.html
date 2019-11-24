@@ -1,0 +1,71 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <link rel="stylesheet" href="app.css">
+        <title>Vue JS - Beginner</title>
+    </head>
+    <body>
+        <div id="root">
+            <!-- Inline Style -->
+            <!-- this is how javascript writes it
+            backgroundColor
+            width
+            height
+            -->
+            <!-- { } anything inside this is javsccript -->
+
+
+            <div v-bind:style="{backgroundColor: myColor, width:myWidth,
+                height:myHeight}"></div>
+
+            <br>
+            <!-- Classes -->
+
+            <!-- if username is < 2 in length border is red -->
+            <input type="text" v-model="username" :class="{red: username.length
+            <2 }" />
+
+            <br><br>
+
+            <!-- if username is < 2 in length border is red else green-->
+            <input type="text" v-model="username" :class="[username.length <2 ?
+                'red' : 'green']" />
+
+
+            <!-- similar  -->
+            <!-- normal -->
+            {{username}}
+            <!-- using v-text -->
+            <!-- <p v-text="username"></p> -->
+
+
+            <!-- v-once -->
+            <!-- froze it once only -->
+            <p v-once>{{username}}</p>
+
+            <br><br>
+
+            <button v-bind:disabled="username.length <2" v-on:click="onSubmit">
+                Submit </button>
+        </div>
+        <script>
+            var vueObj = new Vue({
+              el:"#root",
+              data:{
+                  myColor:"#000",
+                  myWidth:"100px",
+                  myHeight:"100px",
+                  username:'aa'
+                },
+                methods:{
+                    onSubmit:function(){
+                        alert("submitted...");
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
