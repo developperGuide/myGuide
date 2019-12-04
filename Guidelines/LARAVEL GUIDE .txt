@@ -1,0 +1,8 @@
+1. LARAVEL FROM SRATCH [12 VIDEO]
+https://www.youtube.com/watch?v=EU7PRmCpx-0
+
+2. LARAVEL BACK END  [1 VIDEO 42min]
+https://www.youtube.com/watch?v=4pc6cgisbKE
+
+3. FULL STACK LARAVEL + VUE JS APPLICATION [1 VIDEO 45min]
+https://www.youtube.com/watch?v=DJ6PD_jBtU0
